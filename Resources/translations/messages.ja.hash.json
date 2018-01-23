@@ -1,0 +1,20 @@
+{
+	"devture_translation.badge.source_language": "b27500b8737a2d000dd6e733ea12413c27d8f62c5a60637762a4c7bb4e016e2e",
+	"devture_translation.btn.save_translations": "253c6c423418cebc51977ddec3360b6af26fc8ed65b3738ce5544b1cec25d0f5",
+	"devture_translation.btn.search": "49c266baaaa70981ea188fa714d5c40cf13830d786a861c9943ae0d26a7f3fe9",
+	"devture_translation.choice.all_languages": "0270d172622dc4ececed7abeb53908d062a598c5147f6d1cdaed095715bbe6e4",
+	"devture_translation.choice.all_modules": "826adce25bb00ed691a832e7becd1bf892009c6b1c5a04040ad8ac14c4eae832",
+	"devture_translation.error_while_saving_please_reload": "76e751435aa1354dac6db00264545aa2afc4b23f577a5cc7ebdd58d19ff82d0f",
+	"devture_translation.error_while_writing": "025b91d01966485a9434605f7874716f04fd0d193d415817f517f708141d0cf1",
+	"devture_translation.list_type.all": "a52ace420f2175d08b1577a1bea5445e36801229c074ef9ed6c55a73401fd9c2",
+	"devture_translation.list_type.translated": "abbc13c13e35c899bfc74c46618cf5faabf71a532b3a2a2dc2cd42b3c5a9ec85",
+	"devture_translation.list_type.untranslated": "d41ef2ce8711fb1fba7cbd79ff969449ced0562061c5d97243a34b5331a19fb8",
+	"devture_translation.minor_source_fix": "33264b5ae5fa6565af02a3baef49c28de72b91dbd74a9e5def0e15e912f64333",
+	"devture_translation.no_search_results_found": "dfa6019c50f1274e81b0ab45f08a1dd85f82563ff365333c8520b17f8fa82f51",
+	"devture_translation.overview": "d4b1ea5708dd532930a85188b45aff6f0a3ed458500c7577e0127a538eb0d100",
+	"devture_translation.placeholder.search_keywords": "21242e8169c114e648dc80eb8e50fb9a2de9dac96c9192e42a3a529eb5f2c4f2",
+	"devture_translation.search": "49c266baaaa70981ea188fa714d5c40cf13830d786a861c9943ae0d26a7f3fe9",
+	"devture_translation.translations": "266a41b90d4f831ea1626e6188606e9ba4fe3f9f72bdb65cb1626d364d212162",
+	"devture_translation.warning.editing_source_translations_invalidates": "0409a34d3739894f193a5206e4c8610ad89b81ab4ae1be64a42cc1d3f7ade0e3",
+	"devture_translation.warning.editing_source_translations_invalidates2": "cb0f26e615d39b7f859dc00634e635f31f6eb76943dc0e3c3f56da692471b310"
+}

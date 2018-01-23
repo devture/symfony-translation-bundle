@@ -1,0 +1,23 @@
+{
+	"name": "devture/translation-bundle",
+	"type": "symfony-bundle",
+	"description": "Symfony bundle that allows .json files to be translated between multiple languages.",
+	"keywords": ["symfony", "bundle", "translation", "internationalization"],
+	"license": "BSD-3-Clause",
+	"authors": [
+		{
+			"name": "Slavi Pantaleev",
+			"email": "slavi@devture.com"
+		}
+	],
+	"require": {
+		"php": ">=7.1",
+		"symfony/framework-bundle": "^2.7 || ^3.0 || ^4.0",
+		"symfony/translation": "^2.7 || ^3.0 || ^4.0"
+	},
+	"autoload": {
+		"psr-4": {
+			"Devture\\Bundle\\TranslationBundle\\": ""
+		}
+	}
+}

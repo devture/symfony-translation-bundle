@@ -1,0 +1,3 @@
+TranslationBundle:
+  resource: "../../../Controller"
+  type: annotation

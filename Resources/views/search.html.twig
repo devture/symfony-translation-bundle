@@ -1,0 +1,21 @@
+{% extends '@DevtureTranslation/layout.html.twig' %}
+
+{% block devture_translation_content %}
+	{% include '@DevtureTranslation/element/navigation_bar.html.twig' with {'selected': 'search'} only %}
+
+	{%
+		include '@DevtureTranslation/element/search_form.html.twig' with {
+			'locales': locales,
+			'searchRequest': searchRequest,
+			'sourceResources': sourceResources,
+		} only
+	%}
+
+	{% if searchResults is not none %}
+		{%
+			include '@DevtureTranslation/element/search_results_list.html.twig' with {
+				'searchResults': searchResults,
+			} only
+		%}
+	{% endif %}
+{% endblock %}

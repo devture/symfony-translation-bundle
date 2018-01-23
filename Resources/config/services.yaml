@@ -1,0 +1,33 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  Devture\Bundle\TranslationBundle\:
+    resource: '../../*'
+    exclude: '../../{Entity,Model,Migrations,Tests}'
+
+  Devture\Bundle\TranslationBundle\Controller\:
+    resource: '../../Controller'
+    tags: ['controller.service_arguments']
+
+  Devture\Bundle\TranslationBundle\Controller\ManagementController:
+    arguments:
+      $locales: "%devture_translation_config.locales%"
+      $twigLayoutPath: "%devture_translation_config.twig_layout_path%"
+
+  Devture\Bundle\TranslationBundle\Twig\TranslationExtension:
+    arguments:
+      $locales: "%devture_translation_config.locales%"
+    tags: [twig.extension]
+
+  Devture\Bundle\TranslationBundle\Helper\ResourceFinder:
+    arguments:
+      $pathsToTranslate: "%devture_translation_config.paths_to_translate%"
+      $sourceLocaleKey: "%devture_translation_config.source_language_locale_key%"
+      $locales: "%devture_translation_config.locales%"
+
+  Devture\Bundle\TranslationBundle\Helper\SearchRequestBuilder:
+    arguments:
+      $locales: "%devture_translation_config.locales%"

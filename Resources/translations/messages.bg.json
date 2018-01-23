@@ -1,0 +1,34 @@
+{
+	"devture_translation": {
+		"badge": {
+			"source_language": "основен език"
+		},
+		"btn": {
+			"save_translations": "Запази преводите",
+			"search": "Търсене"
+		},
+		"choice": {
+			"all_languages": "-- Всички езици --",
+			"all_modules": "-- Всички модули --"
+		},
+		"error_while_saving_please_reload": "Грешка при запазването. Презаредете страницата и опитайте пак.",
+		"error_while_writing": "Неуспешно запазване на преводите за: %resource%/%locale%. Уверете се, че уеб сървъра може да пише по файловете.",
+		"list_type": {
+			"all": "Всички",
+			"translated": "Преведени",
+			"untranslated": "Непреведени"
+		},
+		"minor_source_fix": "Малка промяна. Запази текущите преводи за другите езици.",
+		"no_search_results_found": "Не са намерени резултати от търсенето.",
+		"overview": "Основен преглед",
+		"placeholder": {
+			"search_keywords": "Търсене за .."
+		},
+		"search": "Търсене",
+		"translations": "Преводи",
+		"warning": {
+			"editing_source_translations_invalidates": "Промяната на оригиналите на %language_name% обикновено маркира преводите за другите езици като остарели.",
+			"editing_source_translations_invalidates2": "Каквото промените тук, ще трябва да бъде преведено отново на всички езици различни от  %language_name% (освен ако не го маркирате като \"Малка промяна\")."
+		}
+	}
+}

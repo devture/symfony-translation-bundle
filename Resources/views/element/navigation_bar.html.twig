@@ -1,0 +1,20 @@
+<div class="card mt-2 mb-2">
+	<div class="card-block">
+		<ul class="nav nav-pills">
+			<li class="nav-item">
+				<a class="nav-link {{ selected == 'overview' ? 'active' : '' }}"
+					href="{{ path('devture_translation.manage') }}">
+					<i class="fa fa-home"></i>
+					{{ ('devture_translation.overview')|trans }}
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link {{ selected == 'search' ? 'active' : '' }}"
+					href="{{ path('devture_translation.search') }}">
+					<i class="fa fa-search"></i>
+					{{ ('devture_translation.search')|trans }}
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>

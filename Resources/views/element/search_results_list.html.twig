@@ -1,0 +1,68 @@
+{% if searchResults|length == 0 %}
+	{{ 'devture_translation.no_search_results_found'|trans }}
+{% else %}
+	<table class="table table-bordered table-striped">
+		<tbody>
+			{% for searchResult in searchResults %}
+				{% set matched_resource = (searchResult.localizedResource is not none ? searchResult.localizedResource : searchResult.sourceResource) %}
+
+				{%
+					set resource_edit_link = (path('devture_translation.edit', {
+						'resourceId': searchResult.sourceResource.id,
+						'language': matched_resource.localeKey,
+						'tab': 'all',
+					}) ~ '#' ~ searchResult.translationString.key)
+				%}
+
+				<tr>
+					<td style="width: 1%;">
+						<i class="devture-translation-flag {{ matched_resource.localeKey }}"></i>
+					</td>
+					<td>
+						{{ matched_resource.name }}
+					</td>
+					<td>
+						<p class="help-block">
+							<a target="_blank" href="{{ resource_edit_link }}">
+								{{ searchResult.translationString.key }}
+							</a>
+						</p>
+						<blockquote>{{ searchResult.translationString.value }}</blockquote>
+
+						{# Source translation result. Let's generate links for each language. #}
+						{% if searchResult.localizedResource is none %}
+							{% for localized_resource in searchResult.sourceResource.localizedResources %}
+								{% set localized_translation_string = localized_resource.translationPack.getByKey(searchResult.translationString.key) %}
+								{% if localized_translation_string is none %}
+									{% set localized_translation_string_is_translated = false %}
+								{% else %}
+									{% set localized_translation_string_is_translated = localized_translation_string.isTranslatedVersionOf(searchResult.translationString) %}
+								{% endif %}
+
+								{%
+									set localized_resource_edit_link = (path('devture_translation.edit', {
+										'resourceId': searchResult.sourceResource.id,
+										'language': localized_resource.localeKey,
+										'tab': 'all',
+									}) ~ '#' ~ searchResult.translationString.key)
+								%}
+
+								<a target="_blank"
+									class="btn btn-sm {{ localized_translation_string_is_translated ? 'btn-outline-success' : 'btn-outline-danger' }}"
+									href="{{ localized_resource_edit_link }}">
+									<i class="devture-translation-flag {{ localized_resource.localeKey }}"></i>
+									{{ devture_translation_get_locale_name(localized_resource.localeKey) }}
+									{% if localized_translation_string_is_translated %}
+										({{ 'devture_translation.list_type.translated'|trans }})
+									{% else %}
+										({{ 'devture_translation.list_type.untranslated'|trans }})
+									{% endif %}
+								</a>
+							{% endfor %}
+						{% endif %}
+					</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+{% endif %}

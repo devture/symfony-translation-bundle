@@ -1,0 +1,38 @@
+<form method="get" action="">
+	<div class="form-group row">
+		<div class="col-lg-4">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-search"></i></span>
+				<input type="text" name="q" class="form-control" placeholder="{{ 'devture_translation.placeholder.search_keywords'|trans }}"
+					value="{{ searchRequest.keywords }}" />
+			</div>
+		</div>
+
+		<div class="col-lg-3">
+			<select name="localeKey" class="form-control">
+				<option value="">{{ 'devture_translation.choice.all_languages'|trans }}</option>
+				{% for locale_data in locales %}
+					<option value="{{ locale_data['key'] }}"
+						{% if searchRequest.localeKey == locale_data['key'] %}selected="selected"{% endif %}>{{ locale_data.name }}</option>
+				{% endfor %}
+			</select>
+		</div>
+
+		<div class="col-lg-3">
+			<select name="sourceResourceId" class="form-control">
+				<option value="">{{ 'devture_translation.choice.all_modules'|trans }}</option>
+				{% for source_resource in sourceResources %}
+					<option value="{{ source_resource.id }}"
+						{% if searchRequest.sourceResourceId == source_resource.id %}selected="selected"{% endif %}>{{ source_resource.name }}</option>
+				{% endfor %}
+			</select>
+		</div>
+
+		<div class="col-lg-2">
+			<button class="btn btn-primary btn-block">
+				<i class="fa fa-search"></i>
+				{{ 'devture_translation.btn.search'|trans }}
+			</button>
+		</div>
+	</div>
+</form>

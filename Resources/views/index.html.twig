@@ -1,0 +1,70 @@
+{% extends '@DevtureTranslation/layout.html.twig' %}
+
+{% block devture_translation_content %}
+	{% include '@DevtureTranslation/element/navigation_bar.html.twig' with {'selected': 'overview'} only %}
+
+	{% for sourceResource in sourceResources %}
+		<div class="card mb-2">
+			<div class="card-header">{{ sourceResource.name }}</div>
+
+			<div class="card-block" style="padding: .5rem">
+
+		<ul style="margin-bottom: 0;">
+			<li>
+				<a
+					href="{{ path('devture_translation.edit', {'resourceId': sourceResource.id, 'language': sourceResource.localeKey}) }}"
+					style="display: block; margin-bottom: 5px;">
+					<i class="devture-translation-flag {{ sourceResource.localeKey }}"></i>
+
+					{{ devture_translation_get_locale_name(sourceResource.localeKey) }}
+
+					({{ sourceResource.translationPack|length }}/{{ sourceResource.translationPack|length }}) -
+					100%
+
+					<span class="float-right">
+						<span class="badge badge-success">{{ 'devture_translation.badge.source_language'|trans }}</span>
+					</span>
+
+					<span style="display: block; clear: both;"></span>
+				</a>
+			</li>
+		{% for localizedResource in sourceResource.localizedResources %}
+			{% set translationStats = localizedResource.determineTranslationStatsAgainst(sourceResource) %}
+			<li>
+				<a
+					href="{{ path('devture_translation.edit', {'resourceId': sourceResource.id, 'language': localizedResource.localeKey}) }}"
+					style="display: block; margin-bottom: 5px;">
+					<i class="devture-translation-flag {{ localizedResource.localeKey }}"></i>
+
+					{{ devture_translation_get_locale_name(localizedResource.localeKey) }}
+
+					({{ translationStats.translatedCount }}/{{ translationStats.totalCount }}) -
+					{{ translationStats.translatedPercentage }}%
+
+					{% set progress_color_class = (translationStats.translatedPercentage == 100 ? 'success' : 'warning') %}
+
+					<span class="progress float-right" style="width: 20%; margin-bottom: 0;">
+						<div
+							class="progress-bar bg-{{ progress_color_class }}" style="text-align: right; width: {{ translationStats.translatedPercentage }}%;">
+							{% if translationStats.translatedPercentage >= 50 %}
+								{{ translationStats.translatedPercentage }}%
+							{% endif %}
+						</div>
+						<div
+							class="progress-bar bg-danger" style="text-align: right; width: {{ 100 - translationStats.translatedPercentage }}%;">
+							{% if translationStats.translatedPercentage < 50 %}
+								{{ translationStats.translatedPercentage }}%
+							{% endif %}
+						</div>
+					</span>
+
+					<span style="display: block; clear: both;"></span>
+				</a>
+			</li>
+		{% endfor %}
+		</ul>
+
+			</div>
+		</div>
+	{% endfor %}
+{% endblock %}

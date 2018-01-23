@@ -1,0 +1,34 @@
+{
+	"devture_translation": {
+		"badge": {
+			"source_language": "元の言語"
+		},
+		"btn": {
+			"save_translations": "翻訳を保存",
+			"search": "検索する"
+		},
+		"choice": {
+			"all_languages": "-- 全ての言語 --",
+			"all_modules": "-- 全モジュール --"
+		},
+		"error_while_saving_please_reload": "エラーが発生しました。再読み込みしてからもう一度お試しください。",
+		"error_while_writing": "％resource％/％locale％の翻訳データを保存できませんでした。 Webサーバーユーザーにの書き込み許可を確認してください。",
+		"list_type": {
+			"all": "全て",
+			"translated": "翻訳済み",
+			"untranslated": "翻訳未対応"
+		},
+		"minor_source_fix": "『英語版のみ修正します』※他の言語では修正が必要ない場合にチェックをいれてください。",
+		"no_search_results_found": "該当する単語はありません。",
+		"overview": "ホーム",
+		"placeholder": {
+			"search_keywords": "単語を検索"
+		},
+		"search": "検索",
+		"translations": "翻訳",
+		"warning": {
+			"editing_source_translations_invalidates": "%language_name%（元の言語）を修正すると、そのフレーズ／文章は他の言語でも英語で再設定されます。（各言語で改めて英語からの翻訳が必要）",
+			"editing_source_translations_invalidates2": "※ 他言語の翻訳済みデータをそのまま生かしたい場合、『英語版のみ修正します』にチェックを入れると英語版のみを修正し、翻訳のし直しは必要ありません。"
+		}
+	}
+}
