@@ -43,14 +43,14 @@ Thus, you can drop the following routing config in `config/packages/dev/devture_
 
 ```yaml
 devture_translation:
-	source_language_locale_key: en
-	paths_to_translate:
-		- "%kernel.project_dir%/src"
-		- "%kernel.project_dir%/translations"
-	locales:
-		- {"key": "en", "name": "English"}
-		- {"key": "ja", "name": "Japanese"}
-	twig_layout_path: "base.html.twig"
+    source_language_locale_key: en
+    paths_to_translate:
+        - "%kernel.project_dir%/src"
+        - "%kernel.project_dir%/translations"
+    locales:
+        - {"key": "en", "name": "English"}
+        - {"key": "ja", "name": "Japanese"}
+    twig_layout_path: "base.html.twig"
 ```
 
 `locales` needs to contain all languages that the translation system should be active for (**including** the source language).
@@ -81,10 +81,10 @@ Thus, you can drop the following routing config in `config/routes/dev/DevtureTra
 
 ```yaml
 DevtureTranslationBundleWebsite:
-	prefix: /{_locale}/translation
-	resource: "@DevtureTranslationBundle/Resources/config/routes/website.yaml"
-	requirements:
-		_locale: "en|ja"
+    prefix: /{_locale}/translation
+    resource: "@DevtureTranslationBundle/Resources/config/routes/website.yaml"
+    requirements:
+        _locale: "en|ja"
 ```
 
 The Web UI is available at the `devture_translation.manage` route.
