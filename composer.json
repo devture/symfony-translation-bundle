@@ -1,5 +1,5 @@
 {
-	"name": "devture/translation-bundle",
+	"name": "devture/symfony-translation-bundle",
 	"type": "symfony-bundle",
 	"description": "Symfony bundle that allows .json files to be translated between multiple languages.",
 	"keywords": ["symfony", "bundle", "translation", "internationalization"],
