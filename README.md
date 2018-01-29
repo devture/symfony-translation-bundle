@@ -15,7 +15,7 @@ At this moment, outdated translations are automatically marked as untranslated i
 
 # Installation
 
-Install through composer (`composer require --dev devture/translation-bundle`).
+Install through composer (`composer require --dev devture/symfony-translation-bundle`).
 
 Add to `config/bundles.php`:
 
