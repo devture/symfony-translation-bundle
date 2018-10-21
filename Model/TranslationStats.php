@@ -21,7 +21,7 @@ class TranslationStats {
 
 	public function getTranslatedPercentage(): float {
 		if ($this->totalCount === 0) {
-			return 0;
+			return 100;
 		}
 		return floor(($this->translatedCount / $this->totalCount) * 100);
 	}
