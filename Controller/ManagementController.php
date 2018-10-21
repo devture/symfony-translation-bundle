@@ -75,7 +75,7 @@ class ManagementController extends AbstractController {
 		$sourceResource = $resourceFinder->findOneById($resourceId);
 
 		if ($sourceResource === null) {
-			return $this->abort(404);
+			throw $this->createNotFoundException('Not found');
 		}
 
 		if ($sourceResource->getLocaleKey() === $language) {
@@ -84,7 +84,7 @@ class ManagementController extends AbstractController {
 		} else {
 			$translatableResource = $sourceResource->getLocalizedResourceByLocaleKey($language);
 			if ($translatableResource === null) {
-				return $this->abort(404);
+				throw $this->createNotFoundException('Not found');
 			}
 
 			$translatableResource->getTranslationPack()->syncWithSource($sourceResource->getTranslationPack());
