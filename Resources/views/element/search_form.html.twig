@@ -2,7 +2,11 @@
 	<div class="form-group row">
 		<div class="col-lg-4">
 			<div class="input-group">
-				<span class="input-group-addon"><i class="fa fa-search"></i></span>
+				<div class="input-group-prepend">
+					<span class="input-group-text">
+						<i class="fa fa-search"></i>
+					</span>
+				</div>
 				<input type="text" name="q" class="form-control" placeholder="{{ 'devture_translation.placeholder.search_keywords'|trans }}"
 					value="{{ searchRequest.keywords }}" />
 			</div>
