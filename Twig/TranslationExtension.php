@@ -1,7 +1,7 @@
 <?php
 namespace Devture\Bundle\TranslationBundle\Twig;
 
-class TranslationExtension extends \Twig_Extension {
+class TranslationExtension extends \Twig\Extension\AbstractExtension {
 
 	private $locales;
 
@@ -15,7 +15,7 @@ class TranslationExtension extends \Twig_Extension {
 
 	public function getFunctions() {
 		return array(
-			new \Twig_SimpleFunction('devture_translation_get_locale_name', [$this, 'getLocaleName']),
+			new \Twig\TwigFunction('devture_translation_get_locale_name', [$this, 'getLocaleName']),
 		);
 	}
 
