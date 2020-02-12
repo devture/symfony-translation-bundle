@@ -3,7 +3,7 @@ namespace Devture\Bundle\TranslationBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Translation\TranslatorInterface;
+use Symfony\Contracts\Translation\TranslatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Devture\Bundle\TranslationBundle\Model\SourceResource;
 use Devture\Bundle\TranslationBundle\Model\ResourceInterface;
