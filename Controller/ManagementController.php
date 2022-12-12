@@ -158,7 +158,7 @@ class ManagementController extends AbstractController {
 		$targetPack = $targetResource->getTranslationPack();
 		$isEditingSourceResource = ($sourceResource === $targetResource);
 
-		$translations = (array) $request->request->get('translations', array());
+		$translations = (array) $request->request->all('translations');
 
 		$modifiedResources = array();
 
