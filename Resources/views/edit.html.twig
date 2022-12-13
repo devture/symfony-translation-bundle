@@ -12,19 +12,19 @@
 
 	<form action="post" id="js-form-translations">
 		<div class="clearfix">
-			<div class="float-left">
+			<div class="float-start">
 				<div class="btn-group">
-					<button type="button" class="btn btn-sm btn-info {{ tabToActivate == 'untranslated' ? 'active' : '' }} js-btn-type-change"
+					<button type="button" class="btn btn-sm btn-primary {{ tabToActivate == 'untranslated' ? 'active' : '' }} js-btn-type-change"
 						data-type="untranslated">
 						{{ 'devture_translation.list_type.untranslated'|trans }}
 						(<span id="js-count-untranslated">..</span>)
 					</button>
-					<button type="button" class="btn btn-sm btn-default {{ tabToActivate == 'translated' ? 'active' : '' }} js-btn-type-change"
+					<button type="button" class="btn btn-sm btn-outline-primary {{ tabToActivate == 'translated' ? 'active' : '' }} js-btn-type-change"
 						data-type="translated">
 						{{ 'devture_translation.list_type.translated'|trans }}
 						(<span id="js-count-translated">..</span>)
 					</button>
-					<button type="button" class="btn btn-sm btn-default {{ tabToActivate == 'all' ? 'active' : '' }} js-btn-type-change"
+					<button type="button" class="btn btn-sm btn-outline-primary {{ tabToActivate == 'all' ? 'active' : '' }} js-btn-type-change"
 						data-type="all">
 						{{ 'devture_translation.list_type.all'|trans }}
 						(<span id="js-count-all">..</span>)
@@ -32,7 +32,7 @@
 				</div>
 			</div>
 
-			<div class="float-right">
+			<div class="float-end">
 				<i class="fa fa-check text-success" id="js-success-indicator" style="visibility: hidden;"></i>
 
 				<button class="btn btn-sm btn-primary" type="submit">
@@ -45,19 +45,19 @@
 		<hr style="margin: 7px 0;" />
 
 		<div class="row">
-			<div class="{% if sourceResource == translatableResource %} col-lg-6 col-lg-offset-3{% else %}col-lg-5{% endif %}">
-				<h4 class="text-center" style="margin-top: 0;">
-					<i class="devture-translation-flag {{ sourceResource.localeKey }}"></i>
-					{{ devture_translation_get_locale_name(sourceResource.localeKey) }}
-					<span class="label label-success">{{ 'devture_translation.badge.source_language'|trans }}</span>
-				</h4>
+			<div class="{% if sourceResource == translatableResource %} col-lg-6 offset-3{% else %}col-lg-5{% endif %}">
+				<div class="d-flex align-items-center justify-content-center">
+					<i class="devture-translation-flag {{ sourceResource.localeKey }} me-2"></i>
+					<h4 class="me-2">{{ devture_translation_get_locale_name(sourceResource.localeKey) }}</h4>
+					<span class="badge border border-success text-success">{{ 'devture_translation.badge.source_language'|trans }}</span>
+				</div>
 			</div>
 			{% if sourceResource != translatableResource %}
-				<div class="col-lg-offset-2 col-lg-5">
-					<h4 class="text-center" style="margin-top: 0;">
-						<i class="devture-translation-flag {{ translatableResource.localeKey }}"></i>
-						{{ devture_translation_get_locale_name(translatableResource.localeKey) }}
-					</h4>
+				<div class="offset-2 col-lg-5">
+					<div class="d-flex align-items-center justify-content-center">
+						<i class="devture-translation-flag {{ translatableResource.localeKey }} me-2"></i>
+						<h4>{{ devture_translation_get_locale_name(translatableResource.localeKey) }}</h4>
+					</div>
 				</div>
 			{% endif %}
 		</div>
@@ -87,9 +87,7 @@
 				<a id="{{ translationString.key }}"></a>
 				<div class="js-translation-container js-translation-container-{{ translationString.key|replace({'.': '-'}) }}"
 					data-translated="{{ translationString.isTranslatedVersionOf(sourceTranslationString) ? 'true' : 'false' }}">
-					<small>{{ translationString.key }}</small>
-
-					<br />
+					<code>{{ translationString.key }}</code>
 
 					<div class="form-group row">
 						<div class="col-lg-5">
@@ -187,8 +185,8 @@
 		});
 
 		$('.js-btn-type-change').click(function (ev) {
-			$('.js-btn-type-change').removeClass('active btn-info').addClass('btn-default');
-			$(this).addClass('active btn-info');
+			$('.js-btn-type-change').removeClass('active btn-primary').addClass('btn-outline-primary');
+			$(this).addClass('active btn-primary');
 
 			refilterList();
 		});
