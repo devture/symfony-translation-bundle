@@ -23,9 +23,7 @@ class ManagementController extends AbstractController {
 		$this->twigLayoutPath = $twigLayoutPath;
 	}
 
-	/**
-	 * @Route("/manage", name="devture_translation.manage", methods={"GET"})
-	 */
+	#[Route('/manage', name: 'devture_translation.manage', methods: ['GET'])]
 	public function index(Request $request, ResourceFinder $resourceFinder, TranslatorInterface $translator) {
 		$resources = $resourceFinder->findAll();
 
@@ -35,9 +33,7 @@ class ManagementController extends AbstractController {
 		));
 	}
 
-	/**
-	 * @Route("/search", name="devture_translation.search", methods={"GET"})
-	 */
+	#[Route('/search', name: 'devture_translation.search', methods: ['GET'])]
 	public function searchAction(
 		Request $request,
 		SearchRequestBuilder $searchRequestBuilder,
@@ -61,9 +57,7 @@ class ManagementController extends AbstractController {
 		));
 	}
 
-	/**
-	 * @Route("/edit/{resourceId}/{language}", name="devture_translation.edit", methods={"GET", "POST"})
-	 */
+	#[Route('/edit/{resourceId}/{language}', name: 'devture_translation.edit', methods: ['GET', 'POST'])]
 	public function edit(
 		Request $request,
 		string $resourceId,
