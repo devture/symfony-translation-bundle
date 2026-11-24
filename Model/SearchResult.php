@@ -20,7 +20,7 @@ class SearchResult {
 
 	public function __construct(
 		SourceResource $sourceResource,
-		LocalizedResource $localizedResource = null,
+		?LocalizedResource $localizedResource,
 		TranslationString $translationString
 	) {
 		$this->sourceResource = $sourceResource;
